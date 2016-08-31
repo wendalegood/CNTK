@@ -76,8 +76,8 @@ template <class ElemType>
     auto input  = Input(0)->ValueTensorFor(rank, fr);
     result.AssignCopyOf(input);
 
-	// do the tracing
-	Log(fr, false/*means log value*/);
+    // do the tracing
+    Log(fr, false/*means log value*/);
 }
 
 template <class ElemType>
@@ -91,9 +91,9 @@ template <class ElemType>
 
     sliceInputGrad.AddCopyOf(sliceOutputGrad);
 
-	// do the tracing
-	if (m_logGradientToo)
-		Log(fr, true/*means log gradient*/);
+    // do the tracing
+    if (m_logGradientToo)
+        Log(fr, true/*means log gradient*/);
 }
 
 // log value or gradient
@@ -126,7 +126,7 @@ template <class ElemType>
         fprintf(stderr, "] %ls %s--> %s\n", m_message.c_str(), logGradientInstead ? "(gradient) " : "", Input(0)->FormatOperationPrototype("").c_str());
         Input(0)->WriteMinibatchWithFormatting(stderr, fr, m_onlyUpToRow, m_onlyUpToT, m_formattingOptions.transpose, m_formattingOptions.isCategoryLabel, m_formattingOptions.isSparse, m_labelMapping,
                                                sequenceSeparator, sequencePrologue, sequenceEpilogue, elementSeparator, sampleSeparator,
-											   valueFormatString, logGradientInstead);
+                                               valueFormatString, logGradientInstead);
     }
 }
 
