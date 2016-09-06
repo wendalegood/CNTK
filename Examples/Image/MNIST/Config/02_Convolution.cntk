@@ -93,8 +93,8 @@ testNetwork = [
         file = "$DataDir$/Test-28x28_cntk_text.txt"
         input = [
             features = [
-            dim = 784
-            format = "dense"
+                dim = 784
+                format = "dense"
             ]
             labels = [
                 dim = 10
