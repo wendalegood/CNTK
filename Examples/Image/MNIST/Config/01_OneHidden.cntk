@@ -11,8 +11,6 @@ rootDir = ".." ; configDir = "$rootDir$/Config" ; dataDir   = "$rootDir$/Data" ;
 outputDir = "$rootDir$/Output" ; modelDir  = "$outputDir$/Models"
 
 modelPath = "$modelDir$/01_OneHidden"
-
-# uncomment the following line to write logs to a file
 stderr = "$outputDir$/01_OneHidden_bs_out"
 
 # TRAINING CONFIG
@@ -20,7 +18,7 @@ trainNetwork = [
     action = "train"
     
     BrainScriptNetworkBuilder = [
-        featDim = 28 * 28                           # number of pixels
+        imageShape = 28:28:1                        # image dimensions, 1 channel only
         featScale = Constant(1/256)
         labelDim = 10                               # number of distinct labels
 
@@ -31,7 +29,7 @@ trainNetwork = [
         }.ol
 
         # inputs
-        features = Input (featDim)
+        features = Input {imageShape}
         labels = Input (labelDim)
 
         # apply model to features

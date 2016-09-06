@@ -34,15 +34,7 @@ trainNetwork = [
             p2 = MaxPoolingLayer {(2:2), stride=(2:2)} (r2)
             
             h1 = DenseLayer {128, activation=Sigmoid, init='uniform'} (p2)
-            #W = ParameterTensor {(128:7:7:32),init='uniform',  initValueScale=1}
-            #b = ParameterTensor {128,init='uniform',  initValueScale=1}
-            #l1 = Times(W, p2) + b
-            #h1 = Sigmoid(l1)
-
             ol = LinearLayer {labelDim, init='uniform'} (h1)
-            #W2 = ParameterTensor {(10:128), init='uniform', initValueScale=1}
-            #b2 = ParameterTensor {10, init='uniform', initValueScale=1}
-            #ol = Times(W2, h1) + b2
         }.ol
 
         # inputs
