@@ -13,7 +13,6 @@
 #include "Basics.h"
 #include "Matrix.h"
 
-
 namespace Microsoft { namespace MSR { namespace CNTK {
 
 // Forward declarations
